@@ -4,7 +4,7 @@ plugins {
     id 'java'
 }
 
-group 'vn.sapo'
+group 'vn.rananu'
 version = '1.0'
 
 repositories {
