@@ -1,4 +1,4 @@
-package vn.rananu.mappers;
+package vn.rananu.shared.mappers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.InitializingBean;
@@ -9,8 +9,9 @@ import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static vn.rananu.configurations.MapperConfiguration.MODEL_MAPPER_SKIP_NULL_DISABLED;
-import static vn.rananu.configurations.MapperConfiguration.MODEL_MAPPER_SKIP_NULL_ENABLED;
+import static vn.rananu.shared.configurations.MapperConfiguration.MODEL_MAPPER_SKIP_NULL_DISABLED;
+import static vn.rananu.shared.configurations.MapperConfiguration.MODEL_MAPPER_SKIP_NULL_ENABLED;
+
 
 public abstract class BaseMapper<DTOResult, Entity, BaseDTO> implements InitializingBean {
     private final Class<DTOResult> dtoResultType;
