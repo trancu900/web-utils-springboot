@@ -47,8 +47,8 @@ public abstract class BaseMapper<DTOResult, Entity, BaseDTO> implements Initiali
     }
 
 
-    public void transferFields(BaseDTO updateSupplierParam, Entity category) {
-        modelMapperSkipNullDisabled.map(updateSupplierParam, category);
+    public void transferFields(BaseDTO updateParam, Entity category) {
+        modelMapperSkipNullDisabled.map(updateParam, category);
     }
 
 
