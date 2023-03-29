@@ -1,13 +1,8 @@
 package vn.rananu.shared;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.Map;
 
-@Getter
-@Setter
 public class Result<T> {
     private T data;
     private Integer status;
@@ -40,5 +35,37 @@ public class Result<T> {
 
     public Result(String message, Integer status) {
         this(null, status, message, null);
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Map<Object, Object> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(Map<Object, Object> errors) {
+        this.errors = errors;
     }
 }

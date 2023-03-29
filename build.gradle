@@ -14,6 +14,7 @@ repositories {
 
 dependencies {
     compileOnly 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly "org.springframework.boot:spring-boot-starter-validation"
     compileOnly 'org.modelmapper:modelmapper:3.1.1'
     compileOnly 'com.jayway.jsonpath:json-path:2.4.0'
     compileOnly 'io.hypersistence:hypersistence-utils-hibernate-55:3.2.0'
