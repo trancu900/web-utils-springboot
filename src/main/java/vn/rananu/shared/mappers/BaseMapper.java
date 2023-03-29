@@ -14,6 +14,14 @@ import static vn.rananu.shared.configurations.MapperConfiguration.MODEL_MAPPER_S
 
 
 public abstract class BaseMapper<DTOResult, Entity, BaseDTO> implements InitializingBean {
+
+
+    @Autowired
+    @Qualifier(MODEL_MAPPER_SKIP_NULL_ENABLED)
+    protected ModelMapper modelMapper;
+    @Autowired
+    @Qualifier(MODEL_MAPPER_SKIP_NULL_DISABLED)
+    protected ModelMapper modelMapperSkipNullDisabled;
     private final Class<DTOResult> dtoResultType;
     private final Class<Entity> entityType;
 
@@ -22,13 +30,6 @@ public abstract class BaseMapper<DTOResult, Entity, BaseDTO> implements Initiali
         dtoResultType = (Class) pt.getActualTypeArguments()[0];
         entityType = (Class) pt.getActualTypeArguments()[1];
     }
-
-    @Autowired
-    @Qualifier(MODEL_MAPPER_SKIP_NULL_ENABLED)
-    protected ModelMapper modelMapper;
-    @Autowired
-    @Qualifier(MODEL_MAPPER_SKIP_NULL_DISABLED)
-    protected ModelMapper modelMapperSkipNullDisabled;
 
     @Override
     public void afterPropertiesSet() {

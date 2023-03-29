@@ -1,14 +1,7 @@
 package vn.rananu.shared.exceptions;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
-
 import java.util.Map;
 
-@Getter
-@NoArgsConstructor
 public abstract class BaseException extends RuntimeException {
     protected Integer status;
     protected Map<String, String> errors;
@@ -25,5 +18,13 @@ public abstract class BaseException extends RuntimeException {
 
     public BaseException(Map<String, String> errors, Integer status) {
         this(null, errors, status);
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public Map<String, String> getErrors() {
+        return errors;
     }
 }
