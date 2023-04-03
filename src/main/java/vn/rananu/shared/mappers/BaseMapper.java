@@ -48,8 +48,15 @@ public abstract class BaseMapper<DTOResult, Entity, BaseDTO> implements Initiali
     }
 
 
-    public void transferFields(BaseDTO updateParam, Entity category) {
-        modelMapperSkipNullDisabled.map(updateParam, category);
+    public void transferFields(BaseDTO updateParam, Entity entity) {
+        transferFields(updateParam, entity, false);
+    }
+
+    public void transferFields(BaseDTO updateParam, Entity entity, boolean skipNullEnabled) {
+        if (skipNullEnabled)
+            modelMapper.map(updateParam, entity);
+        else
+            modelMapperSkipNullDisabled.map(updateParam, entity);
     }
 
 
